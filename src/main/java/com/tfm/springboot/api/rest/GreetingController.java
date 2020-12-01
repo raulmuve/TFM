@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tfm.springboot.entity.Ruta;
 import com.tfm.springboot.rest.model.Greeting;
-import com.tfm.springboot.rest.model.RutaSearchOutput;
+import com.tfm.springboot.rest.model.RutesSearchOutputRuta;
 
 @RestController
 public class GreetingController {
@@ -22,9 +22,9 @@ public class GreetingController {
 	}
 	
 	@GetMapping("/ruta")
-	public RutaSearchOutput search()
+	public RutesSearchOutputRuta search()
 	{
-		RutaSearchOutput ruta = new RutaSearchOutput()
+		RutesSearchOutputRuta ruta = new RutesSearchOutputRuta()
 				.setNom("TFM - Sistemes distribuits. 2020")
 				.setId_ruta(1);
 				
