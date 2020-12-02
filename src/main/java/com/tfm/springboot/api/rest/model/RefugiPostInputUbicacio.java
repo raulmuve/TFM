@@ -1,4 +1,4 @@
-package com.tfm.springboot.rest.model;
+package com.tfm.springboot.api.rest.model;
 
 import javax.validation.constraints.NotEmpty;
 

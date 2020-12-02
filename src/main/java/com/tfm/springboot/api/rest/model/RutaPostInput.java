@@ -1,4 +1,4 @@
-package com.tfm.springboot.rest.model;
+package com.tfm.springboot.api.rest.model;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "id_ruta", "nom" })
-public class RutesSearchOutputRuta {
+public class RutaPostInput {
 
 	@JsonProperty("id_ruta")
 	@JsonPropertyDescription("ruta code")
@@ -59,7 +59,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("id_ruta")
-	public RutesSearchOutputRuta setId_ruta(Integer id_ruta) {
+	public RutaPostInput setId_ruta(Integer id_ruta) {
 		this.id_ruta = id_ruta;
 		return this;
 	}
@@ -70,7 +70,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("nom")
-	public RutesSearchOutputRuta setNom(String nom) {
+	public RutaPostInput setNom(String nom) {
 		this.nom = nom;
 		return this;
 	}
@@ -81,7 +81,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("descripcio")
-	public RutesSearchOutputRuta setDescripcio(String descripcio) {
+	public RutaPostInput setDescripcio(String descripcio) {
 		this.descripcio = descripcio;
 		return this;
 	}
@@ -92,7 +92,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("link")
-	public RutesSearchOutputRuta setLink(String link) {
+	public RutaPostInput setLink(String link) {
 		this.link = link;
 		return this;
 	}
@@ -103,7 +103,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("actiu")
-	public RutesSearchOutputRuta setActiu(boolean actiu) {
+	public RutaPostInput setActiu(boolean actiu) {
 		this.actiu = actiu;
 		return this;
 	}
@@ -114,7 +114,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("dataCreacio")
-	public RutesSearchOutputRuta setDataCreacio(Date dataCreacio) {
+	public RutaPostInput setDataCreacio(Date dataCreacio) {
 		this.dataCreacio = dataCreacio;
 		return this;
 	}
@@ -125,7 +125,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("dataModificacio")
-	public RutesSearchOutputRuta setDataModificacio(Date dataModificacio) {
+	public RutaPostInput setDataModificacio(Date dataModificacio) {
 		this.dataModificacio = dataModificacio;
 		return this;
 	}
@@ -136,7 +136,7 @@ public class RutesSearchOutputRuta {
 	}
 
 	@JsonProperty("numeroConsultes")
-	public RutesSearchOutputRuta setNumeroConsultes(Integer numeroConsultes) {
+	public RutaPostInput setNumeroConsultes(Integer numeroConsultes) {
 		this.numeroConsultes = numeroConsultes;
 		return this;
 	}

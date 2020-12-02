@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tfm.springboot.rest.model.Greeting;
-import com.tfm.springboot.rest.model.RutesSearchOutputRuta;
+import com.tfm.springboot.api.rest.model.Greeting;
+import com.tfm.springboot.api.rest.model.RutesSearchOutputRuta;
 
 @RestController
 public class GreetingController {
