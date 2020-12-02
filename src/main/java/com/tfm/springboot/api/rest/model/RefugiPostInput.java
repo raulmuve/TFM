@@ -1,9 +1,10 @@
-package com.tfm.springboot.rest.model;
+package com.tfm.springboot.api.rest.model;
 
 import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,7 +17,7 @@ public class RefugiPostInput {
 
 	@JsonProperty("id_Refugi")
 	@JsonPropertyDescription("id_Refugi code")
-	@NotEmpty(message = "id_Refugi is mandatory")
+	@NotNull(message = "id_Refugi is mandatory")
 	private Integer id_Refugi;
 
 	@JsonProperty("nom")
@@ -26,42 +27,37 @@ public class RefugiPostInput {
 
 	@JsonProperty("ubicacio")
 	@JsonPropertyDescription("ubicacio code")
-	@NotEmpty(message = "ubicacio is mandatory")
+	@NotNull(message = "ubicacio is mandatory")
 	private RefugiPostInputUbicacio ubicacio;
 
 	@JsonProperty("places")
 	@JsonPropertyDescription("places code")
-	@NotEmpty(message = "places is mandatory")
+	@NotNull(message = "id_Refugi is mandatory")
 	private Integer places;
 
 	@JsonProperty("cims")
 	@JsonPropertyDescription("cims code")
-	@NotEmpty(message = "cims is mandatory")
 	private List<Integer> cims = null;
 
 	@JsonProperty("rutes")
 	@JsonPropertyDescription("rutes code")
-	@NotEmpty(message = "rutes is mandatory")
 	private List<Integer> rutes;
 
 	@JsonProperty("dataCreacio")
 	@JsonPropertyDescription("dataCreacio code")
-	@NotEmpty(message = "dataCreacio is mandatory")
 	private Date dataCreacio;
 
 	@JsonProperty("dataModificacio")
 	@JsonPropertyDescription("dataModificacio code")
-	@NotEmpty(message = "dataModificacio is mandatory")
 	private Date dataModificacio;
 
 	@JsonProperty("numConsultes")
 	@JsonPropertyDescription("numConsultes code")
-	@NotEmpty(message = "numConsultes is mandatory")
 	private Integer numConsultes;
 
 	@JsonProperty("actiu")
 	@JsonPropertyDescription("actiu value")
-	@NotEmpty(message = "latitud is mandatory")
+	@NotNull(message = "actiu is mandatory")
 	private boolean actiu;
 
 	@JsonProperty("id_Refugi")

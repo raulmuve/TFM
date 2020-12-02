@@ -1,4 +1,4 @@
-package com.tfm.springboot.entity;
+package com.tfm.springboot.api.entity;
 
 public class RefugiUbicacio {
 	private String latitud;
