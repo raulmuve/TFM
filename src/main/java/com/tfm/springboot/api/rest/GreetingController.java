@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tfm.springboot.entity.Ruta;
 import com.tfm.springboot.rest.model.Greeting;
 import com.tfm.springboot.rest.model.RutesSearchOutputRuta;
 
