@@ -1,38 +1,60 @@
 package com.tfm.springboot.api.service.impl;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.tfm.springboot.api.rest.model.RutaPostInput;
 import com.tfm.springboot.api.rest.model.RutaPostOutput;
-import com.tfm.springboot.api.rest.model.RutesSearchOutputRuta;
+import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 import com.tfm.springboot.api.service.RutaService;
 
 @Service
 public class RutaServiceImpl implements RutaService {
+	
+	static final String uri = "http://localhost:5000/rutes/";
+	
+	RestTemplate template  = new RestTemplate();
 
-	public RutaPostOutput addRuta(RutaPostInput ruta) {
+	public ResponseEntity<RutaPostOutput> addRuta(RutaPostInput rutaInput) {
+		
+		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri, RutaPostOutput.class);
+		
+		return ruta;
+	}
+
+	public ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput rutaInput, String id) {
+		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + id, RutaPostOutput.class);
+		
+		return ruta;
+
+	}
+
+	public ResponseEntity<RutesSearchOutput> searchByCim(String idCim) {
+		
+		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri +"/getByIdCim/" + idCim, RutesSearchOutput.class);
+		
+		return ruta;
+	}
+
+	public ResponseEntity<RutesSearchOutput> searchByRefugi(String idRefugi) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public RutaPostOutput modifyRuta(RutaPostInput ruta) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResponseEntity<RutesSearchOutput> topTen() {
+
+		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + "top10", RutesSearchOutput.class);
+		
+		return ruta;
 	}
 
-	public RutesSearchOutputRuta searchByCim(int idCim) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	@Override
+	public ResponseEntity<RutesSearchOutput> search(String id) {
 
-	public RutesSearchOutputRuta searchByRefugi(int idRefugi) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public RutesSearchOutputRuta topTen() {
-		// TODO Auto-generated method stub
-		return null;
+		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + id, RutesSearchOutput.class);
+		
+		return ruta;
 	}
 
 }

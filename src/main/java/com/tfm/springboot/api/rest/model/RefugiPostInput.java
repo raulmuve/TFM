@@ -15,11 +15,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder(alphabetic = true)
 public class RefugiPostInput {
 
-	@JsonProperty("id_Refugi")
-	@JsonPropertyDescription("id_Refugi code")
-	@NotNull(message = "id_Refugi is mandatory")
-	private Integer id_Refugi;
-
 	@JsonProperty("nom")
 	@JsonPropertyDescription("nom code")
 	@NotEmpty(message = "nom is mandatory")
@@ -59,16 +54,6 @@ public class RefugiPostInput {
 	@JsonPropertyDescription("actiu value")
 	@NotNull(message = "actiu is mandatory")
 	private boolean actiu;
-
-	@JsonProperty("id_Refugi")
-	public Integer getId_Refugi() {
-		return id_Refugi;
-	}
-
-	@JsonProperty("id_Refugi")
-	public void setId_Refugi(Integer id_Refugi) {
-		this.id_Refugi = id_Refugi;
-	}
 
 	@JsonProperty("nom")
 	public String getNom() {
@@ -158,13 +143,6 @@ public class RefugiPostInput {
 	@JsonProperty("actiu")
 	public void setActiu(boolean actiu) {
 		this.actiu = actiu;
-	}
-
-	@Override
-	public String toString() {
-		return "RefugiPostInput [id_Refugi=" + id_Refugi + ", nom=" + nom + ", ubicacio=" + ubicacio + ", places="
-				+ places + ", cims=" + cims + ", rutes=" + rutes + ", dataCreacio=" + dataCreacio + ", dataModificacio="
-				+ dataModificacio + ", numConsultes=" + numConsultes + ", actiu=" + actiu + "]";
 	}
 
 }

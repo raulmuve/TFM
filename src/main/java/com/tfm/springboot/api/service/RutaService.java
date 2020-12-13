@@ -1,21 +1,24 @@
 package com.tfm.springboot.api.service;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.tfm.springboot.api.rest.model.RutaPostInput;
 import com.tfm.springboot.api.rest.model.RutaPostOutput;
-import com.tfm.springboot.api.rest.model.RutesSearchOutputRuta;
+import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 
 @Service
 public interface RutaService {
 
-	RutaPostOutput addRuta(RutaPostInput ruta);
+	ResponseEntity<RutaPostOutput> addRuta(RutaPostInput ruta);
 
-	RutaPostOutput modifyRuta(RutaPostInput ruta);
+	ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput ruta, String id);
 
-	RutesSearchOutputRuta searchByCim(int idCim);
+	ResponseEntity<RutesSearchOutput> searchByCim(String idCim);
 
-	RutesSearchOutputRuta searchByRefugi(int idRefugi);
+	ResponseEntity<RutesSearchOutput> searchByRefugi(String idRefugi);
 
-	RutesSearchOutputRuta topTen();
+	ResponseEntity<RutesSearchOutput> topTen();
+	
+	ResponseEntity<RutesSearchOutput> search(String id);
 }
