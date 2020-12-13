@@ -22,29 +22,25 @@ public class RutaController {
 
 	@Autowired
 	private RutaService rutaService;
-	
+
 	@GetMapping("/{id}")
-	ResponseEntity<RutesSearchOutput> search(@PathVariable() String id) 
-	{
+	ResponseEntity<RutesSearchOutput> search(@PathVariable() String id) {
 		return rutaService.search(id);
 	}
-	
+
 	@PostMapping("")
-	ResponseEntity<RutaPostOutput> add(@Valid @RequestBody RutaPostInput rutaInput)
-	{
+	ResponseEntity<RutaPostOutput> add(@Valid @RequestBody RutaPostInput rutaInput) {
 		return rutaService.addRuta(rutaInput);
 	}
-	
+
 	@PostMapping("/{id}")
-	ResponseEntity<RutaPostOutput> modify(@PathVariable() String id, @Valid @RequestBody RutaPostInput rutaInput)
-	{
+	ResponseEntity<RutaPostOutput> modify(@PathVariable() String id, @Valid @RequestBody RutaPostInput rutaInput) {
 		return rutaService.modifyRuta(rutaInput, id);
 	}
-	
+
 	@GetMapping("/top10")
-	ResponseEntity<RutesSearchOutput> top10() 
-	{
+	ResponseEntity<RutesSearchOutput> top10() {
 		return rutaService.topTen();
-		
+
 	}
 }

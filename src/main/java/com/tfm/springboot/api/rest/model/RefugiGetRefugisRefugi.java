@@ -1,5 +1,6 @@
 package com.tfm.springboot.api.rest.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
@@ -12,9 +13,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder(alphabetic = true)
-public class RefugiPostInput {
+public class RefugiGetRefugisRefugi {
+
 	@JsonProperty("id")
 	@JsonPropertyDescription("id code")
+	@NotNull(message = "id is mandatory")
 	private String id;
 
 	@JsonProperty("nom")
@@ -25,7 +28,7 @@ public class RefugiPostInput {
 	@JsonProperty("ubicacio")
 	@JsonPropertyDescription("ubicacio code")
 	@NotNull(message = "ubicacio is mandatory")
-	private RefugiPostInputUbicacio ubicacio;
+	private RefugiGetRefugisRefugiUbicacio ubicacio;
 
 	@JsonProperty("places")
 	@JsonPropertyDescription("places code")
@@ -40,13 +43,30 @@ public class RefugiPostInput {
 	@JsonPropertyDescription("rutes code")
 	private List<Integer> rutes;
 
+	@JsonProperty("dataCreacio")
+	@JsonPropertyDescription("dataCreacio code")
+	private Date dataCreacio;
+
+	@JsonProperty("dataModificacio")
+	@JsonPropertyDescription("dataModificacio code")
+	private Date dataModificacio;
+
+	@JsonProperty("numConsultes")
+	@JsonPropertyDescription("numConsultes code")
+	private Integer numConsultes;
+
+	@JsonProperty("actiu")
+	@JsonPropertyDescription("actiu value")
+	@NotNull(message = "actiu is mandatory")
+	private boolean actiu;
+
 	@JsonProperty("id")
 	public String getId() {
 		return id;
 	}
 
 	@JsonProperty("id")
-	public void setId_Refugi(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -61,12 +81,12 @@ public class RefugiPostInput {
 	}
 
 	@JsonProperty("ubicacio")
-	public RefugiPostInputUbicacio getUbicacio() {
+	public RefugiGetRefugisRefugiUbicacio getUbicacio() {
 		return ubicacio;
 	}
 
 	@JsonProperty("ubicacio")
-	public void setUbicacio(RefugiPostInputUbicacio ubicacio) {
+	public void setUbicacio(RefugiGetRefugisRefugiUbicacio ubicacio) {
 		this.ubicacio = ubicacio;
 	}
 
@@ -99,4 +119,45 @@ public class RefugiPostInput {
 	public void setRutes(List<Integer> rutes) {
 		this.rutes = rutes;
 	}
+
+	@JsonProperty("dataCreacio")
+	public Date getDataCreacio() {
+		return dataCreacio;
+	}
+
+	@JsonProperty("dataCreacio")
+	public void setDataCreacio(Date dataCreacio) {
+		this.dataCreacio = dataCreacio;
+	}
+
+	@JsonProperty("dataModificacio")
+	public Date getDataModificacio() {
+		return dataModificacio;
+	}
+
+	@JsonProperty("dataModificacio")
+	public void setDataModificacio(Date dataModificacio) {
+		this.dataModificacio = dataModificacio;
+	}
+
+	@JsonProperty("numConsultes")
+	public Integer getNumConsultes() {
+		return numConsultes;
+	}
+
+	@JsonProperty("numConsultes")
+	public void setNumConsultes(Integer numConsultes) {
+		this.numConsultes = numConsultes;
+	}
+
+	@JsonProperty("actiu")
+	public boolean isActiu() {
+		return actiu;
+	}
+
+	@JsonProperty("actiu")
+	public void setActiu(boolean actiu) {
+		this.actiu = actiu;
+	}
+
 }

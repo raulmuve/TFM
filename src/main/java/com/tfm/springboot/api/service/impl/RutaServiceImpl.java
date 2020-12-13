@@ -11,29 +11,30 @@ import com.tfm.springboot.api.service.RutaService;
 
 @Service
 public class RutaServiceImpl implements RutaService {
-	
+
 	static final String uri = "http://localhost:5000/rutes/";
-	
-	RestTemplate template  = new RestTemplate();
+
+	RestTemplate template = new RestTemplate();
 
 	public ResponseEntity<RutaPostOutput> addRuta(RutaPostInput rutaInput) {
-		
+
 		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri, RutaPostOutput.class);
-		
+
 		return ruta;
 	}
 
 	public ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput rutaInput, String id) {
 		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + id, RutaPostOutput.class);
-		
+
 		return ruta;
 
 	}
 
 	public ResponseEntity<RutesSearchOutput> searchByCim(String idCim) {
-		
-		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri +"/getByIdCim/" + idCim, RutesSearchOutput.class);
-		
+
+		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + "/getByIdCim/" + idCim,
+				RutesSearchOutput.class);
+
 		return ruta;
 	}
 
@@ -45,7 +46,7 @@ public class RutaServiceImpl implements RutaService {
 	public ResponseEntity<RutesSearchOutput> topTen() {
 
 		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + "top10", RutesSearchOutput.class);
-		
+
 		return ruta;
 	}
 
@@ -53,7 +54,7 @@ public class RutaServiceImpl implements RutaService {
 	public ResponseEntity<RutesSearchOutput> search(String id) {
 
 		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + id, RutesSearchOutput.class);
-		
+
 		return ruta;
 	}
 

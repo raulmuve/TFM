@@ -3,16 +3,20 @@ package com.tfm.springboot.api.rest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.tfm.springboot.api.rest.model.RefugiPostInput;
 import com.tfm.springboot.api.rest.model.RefugiPostOutput;
+
 import com.tfm.springboot.api.service.RefugiService;
+import com.tfm.springboot.api.rest.model.Refugi;
+import com.tfm.springboot.api.rest.model.RefugiGetRefugis;
 
 @RestController
 @RequestMapping("/refugi")
@@ -20,13 +24,35 @@ public class RefugiController {
 
 	@Autowired
 	private RefugiService refugiService;
-	
+
 	@PostMapping
-	RefugiPostOutput add(@Valid @RequestBody RefugiPostInput refugiInput) {
-		try {
-			return refugiService.add(refugiInput);
-		} catch(Exception ex) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage(), ex);
-		}
+	ResponseEntity<RefugiPostOutput> add(@Valid @RequestBody RefugiPostInput refugiInput) {
+		return refugiService.add(refugiInput);
 	}
+
+	@PostMapping("/modify")
+	ResponseEntity<RefugiPostOutput> modify(@Valid @RequestBody RefugiPostInput refugiInput) {
+		return refugiService.modify(refugiInput);
+	}
+
+	@GetMapping("/{id}")
+	ResponseEntity<Refugi> search(@PathVariable() String id) {
+		return refugiService.search(id);
+	}
+
+	@GetMapping("/top10")
+	ResponseEntity<RefugiGetRefugis> top10() {
+		return refugiService.top10();
+	}
+
+	@GetMapping("/allrefugis")
+	ResponseEntity<RefugiGetRefugis> allRefugis() {
+		return refugiService.all();
+	}
+
+	@PostMapping("delete/{id}")
+	ResponseEntity<RefugiPostOutput> add(@PathVariable String id) {
+		return refugiService.delete(id);
+	}
+
 }

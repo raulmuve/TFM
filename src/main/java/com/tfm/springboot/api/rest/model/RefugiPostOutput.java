@@ -11,40 +11,42 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder(alphabetic = true)
 public class RefugiPostOutput {
 
-	@JsonProperty("id_Refugi")
-	@JsonPropertyDescription("refugi code")
-	@NotEmpty(message = "id_Refugi is mandatory")
-	private Integer id_Refugi;
 
-	@JsonProperty("nom")
-	@JsonPropertyDescription("nom code")
-	@NotEmpty(message = "nom is mandatory")
-	private String nom;
+		@JsonProperty("id")
+		@JsonPropertyDescription("refugi code")
+		@NotEmpty(message = "id is mandatory")
+		private String id;
 
-	@JsonProperty("id_Refugi")
-	public Integer getId_Refugi() {
-		return id_Refugi;
-	}
+		@JsonProperty("nom")
+		@JsonPropertyDescription("nom code")
+		@NotEmpty(message = "nom is mandatory")
+		private String nom;
+		
+		@JsonProperty("places")
+		@JsonPropertyDescription("places code")
+		@NotEmpty(message = "places is mandatory")
+		private Integer places;
 
-	@JsonProperty("id_Refugi")
-	public RefugiPostOutput setId_Refugi(Integer id_Refugi) {
-		this.id_Refugi = id_Refugi;
-		return this;
-	}
+		@JsonProperty("id")
+		public String getId() {
+			return id;
+		}
 
-	@JsonProperty("nom")
-	public String getNom() {
-		return nom;
-	}
+		@JsonProperty("id")
+		public RefugiPostOutput setId(String id) {
+			this.id = id;
+			return this;
+		}
 
-	@JsonProperty("nom")
-	public RefugiPostOutput setNom(String nom) {
-		this.nom = nom;
-		return this;
-	}
+		@JsonProperty("nom")
+		public String getNom() {
+			return nom;
+		}
 
-	@Override
-	public String toString() {
-		return "RefugiPostOutput [id_Refugi=" + id_Refugi + ", nom=" + nom + "]";
-	}
+		@JsonProperty("nom")
+		public RefugiPostOutput setNom(String nom) {
+			this.nom = nom;
+			return this;
+		}
+	
 }

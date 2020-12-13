@@ -19,6 +19,6 @@ public interface RutaService {
 	ResponseEntity<RutesSearchOutput> searchByRefugi(String idRefugi);
 
 	ResponseEntity<RutesSearchOutput> topTen();
-	
+
 	ResponseEntity<RutesSearchOutput> search(String id);
 }
