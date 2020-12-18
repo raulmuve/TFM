@@ -51,8 +51,12 @@ public class RefugiController {
 	}
 
 	@PostMapping("delete/{id}")
-	ResponseEntity<RefugiPostOutput> add(@PathVariable String id) {
+	ResponseEntity<RefugiPostOutput> delete(@PathVariable String id) {
 		return refugiService.delete(id);
 	}
-
+	
+	@GetMapping("/bycim/{id}")
+	ResponseEntity<RefugiGetRefugis> byCim(@PathVariable() String id) {
+		return refugiService.byCim(id);
+	}
 }

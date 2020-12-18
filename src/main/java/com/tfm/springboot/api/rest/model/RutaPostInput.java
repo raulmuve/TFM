@@ -11,6 +11,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({ "id_ruta", "nom" })
 public class RutaPostInput {
 	
+	@JsonProperty("id")
+	@JsonPropertyDescription("id code")
+	private String id;
+	
 	@JsonProperty("nom")
 	@JsonPropertyDescription("ruta name")
 	@NotEmpty(message = "name is mandatory")
@@ -28,9 +32,19 @@ public class RutaPostInput {
 	
 	@JsonProperty("urlPic")
 	@JsonPropertyDescription("urlPic link")
-	@NotEmpty(message = "urlPic is mandatory")
 	private String urlPic;
 	
+
+	@JsonProperty("id")
+	public String getId() {
+		return id;
+	}
+
+	@JsonProperty("id")
+	public RutaPostInput setId(String id) {
+		this.id = id;
+		return this;
+	}
 
 	@JsonProperty("nom")
 	public String getNom() {

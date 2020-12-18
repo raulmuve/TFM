@@ -20,4 +20,6 @@ public interface RefugiService {
 	ResponseEntity<RefugiGetRefugis> all();
 
 	ResponseEntity<RefugiPostOutput> delete(String id);
+	
+	ResponseEntity<RefugiGetRefugis> byCim(String id);
 }

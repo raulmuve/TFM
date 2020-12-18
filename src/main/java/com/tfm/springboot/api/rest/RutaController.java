@@ -27,20 +27,30 @@ public class RutaController {
 	ResponseEntity<RutesSearchOutput> search(@PathVariable() String id) {
 		return rutaService.search(id);
 	}
+	
+	@GetMapping("")
+	ResponseEntity<RutesSearchOutput> searchAll() {
+		return rutaService.searchAll();
+	}
 
 	@PostMapping("")
 	ResponseEntity<RutaPostOutput> add(@Valid @RequestBody RutaPostInput rutaInput) {
 		return rutaService.addRuta(rutaInput);
 	}
 
-	@PostMapping("/{id}")
-	ResponseEntity<RutaPostOutput> modify(@PathVariable() String id, @Valid @RequestBody RutaPostInput rutaInput) {
-		return rutaService.modifyRuta(rutaInput, id);
+	@PostMapping("/modify")
+	ResponseEntity<RutaPostOutput> modify( @Valid @RequestBody RutaPostInput rutaInput) {
+		return rutaService.modifyRuta(rutaInput);
 	}
 
 	@GetMapping("/top10")
 	ResponseEntity<RutesSearchOutput> top10() {
 		return rutaService.topTen();
 
+	}
+	
+	@PostMapping("/delete/{id}")
+	ResponseEntity<RutaPostOutput> delete(@PathVariable() String id) {
+		return rutaService.delete(id);
 	}
 }

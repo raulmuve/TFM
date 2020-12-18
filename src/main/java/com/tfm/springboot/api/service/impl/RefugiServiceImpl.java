@@ -62,4 +62,11 @@ public class RefugiServiceImpl implements RefugiService {
 
 	}
 
+	@Override
+	public ResponseEntity<RefugiGetRefugis> byCim(String id) {
+		ResponseEntity<RefugiGetRefugis> refugi = template.getForEntity(uri + "bycim/" + id, RefugiGetRefugis.class);
+
+		return refugi;
+	}
+
 }

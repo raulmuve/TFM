@@ -12,7 +12,7 @@ public interface RutaService {
 
 	ResponseEntity<RutaPostOutput> addRuta(RutaPostInput ruta);
 
-	ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput ruta, String id);
+	ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput ruta);
 
 	ResponseEntity<RutesSearchOutput> searchByCim(String idCim);
 
@@ -21,4 +21,8 @@ public interface RutaService {
 	ResponseEntity<RutesSearchOutput> topTen();
 
 	ResponseEntity<RutesSearchOutput> search(String id);
+	
+	ResponseEntity<RutesSearchOutput> searchAll();
+	
+	ResponseEntity<RutaPostOutput> delete(String id);
 }

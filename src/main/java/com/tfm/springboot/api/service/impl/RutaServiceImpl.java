@@ -23,8 +23,8 @@ public class RutaServiceImpl implements RutaService {
 		return ruta;
 	}
 
-	public ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput rutaInput, String id) {
-		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + id, RutaPostOutput.class);
+	public ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput rutaInput) {
+		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + "modify" , RutaPostOutput.class);
 
 		return ruta;
 
@@ -54,6 +54,20 @@ public class RutaServiceImpl implements RutaService {
 	public ResponseEntity<RutesSearchOutput> search(String id) {
 
 		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + id, RutesSearchOutput.class);
+
+		return ruta;
+	}
+
+	@Override
+	public ResponseEntity<RutaPostOutput> delete(String id) {
+		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + "delete/"+ id , RutaPostOutput.class);
+
+		return ruta;
+	}
+
+	@Override
+	public ResponseEntity<RutesSearchOutput> searchAll() {
+		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri , RutesSearchOutput.class);
 
 		return ruta;
 	}
