@@ -13,7 +13,7 @@ import com.tfm.springboot.api.service.RefugiService;
 @Service
 public class RefugiServiceImpl implements RefugiService {
 
-	static final String uri = "http://localhost:8181/refugi/";
+	static final String uri = "http://serviceRefugi:8181/refugi/";
 
 	RestTemplate template = new RestTemplate();
 

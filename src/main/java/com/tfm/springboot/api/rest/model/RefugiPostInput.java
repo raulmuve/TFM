@@ -34,11 +34,11 @@ public class RefugiPostInput {
 
 	@JsonProperty("cims")
 	@JsonPropertyDescription("cims code")
-	private List<Integer> cims = null;
+	private String cims = null;
 
 	@JsonProperty("rutes")
 	@JsonPropertyDescription("rutes code")
-	private List<Integer> rutes;
+	private String rutes;
 
 	@JsonProperty("id")
 	public String getId() {
@@ -81,22 +81,22 @@ public class RefugiPostInput {
 	}
 
 	@JsonProperty("cims")
-	public List<Integer> getCims() {
+	public String getCims() {
 		return cims;
 	}
 
 	@JsonProperty("cims")
-	public void setCims(List<Integer> cims) {
+	public void setCims(String cims) {
 		this.cims = cims;
 	}
 
 	@JsonProperty("rutes")
-	public List<Integer> getRutes() {
+	public String getRutes() {
 		return rutes;
 	}
 
 	@JsonProperty("rutes")
-	public void setRutes(List<Integer> rutes) {
+	public void setRutes(String rutes) {
 		this.rutes = rutes;
 	}
 }

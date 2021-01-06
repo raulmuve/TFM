@@ -7,6 +7,7 @@ import com.tfm.springboot.api.rest.model.Cim;
 import com.tfm.springboot.api.rest.model.CimGetCims;
 import com.tfm.springboot.api.rest.model.CimPostInput;
 import com.tfm.springboot.api.rest.model.CimPostOutput;
+import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 
 
 @Service
@@ -20,7 +21,7 @@ public interface CimService {
 	
 	ResponseEntity<Cim> search(String id);
 	
-	ResponseEntity<CimGetCims> top10();
+	ResponseEntity<Object> top10();
 	
-	ResponseEntity<CimGetCims> searchAll();
+	ResponseEntity<Object> searchAll();
 }

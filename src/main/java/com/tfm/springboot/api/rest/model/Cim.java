@@ -14,14 +14,6 @@ public class Cim {
 	@NotEmpty(message = "nom is mandatory")
 	private String nom;
 	
-	@JsonProperty("informacioGeneral")
-	@NotEmpty(message = "informacioGeneral is mandatory")
-	private CimInformacioGeneral informacioGeneral;
-	
-	@JsonProperty("cimAltitud")
-	@NotEmpty(message = "cimAltitud is mandatory")
-	private CimAltitud cimAltitud;
-	
 	@JsonProperty("actiu")
 	@NotEmpty(message = "actiu is mandatory")
 	private boolean actiu;
@@ -56,22 +48,6 @@ public class Cim {
 
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public CimInformacioGeneral getInformacioGeneral() {
-		return informacioGeneral;
-	}
-
-	public void setInformacioGeneral(CimInformacioGeneral informacioGeneral) {
-		this.informacioGeneral = informacioGeneral;
-	}
-
-	public CimAltitud getCimAltitud() {
-		return cimAltitud;
-	}
-
-	public void setCimAltitud(CimAltitud cimAltitud) {
-		this.cimAltitud = cimAltitud;
 	}
 
 	public boolean isActiu() {

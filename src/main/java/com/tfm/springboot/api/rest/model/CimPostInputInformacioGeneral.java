@@ -14,7 +14,7 @@ public class CimPostInputInformacioGeneral {
 	@JsonProperty("codi")
 	@JsonPropertyDescription("codi code")
 	@NotNull(message = "codi is mandatori")
-	private String codi;
+	private Integer codi;
 	
 	@JsonProperty("municipi")
 	@JsonPropertyDescription("municipi code")
@@ -26,11 +26,11 @@ public class CimPostInputInformacioGeneral {
 	@NotNull(message = "comarca is mandatori")
 	private String comarca;
 
-	public String getCodi() {
+	public Integer getCodi() {
 		return codi;
 	}
 
-	public void setCodi(String codi) {
+	public void setCodi(Integer codi) {
 		this.codi = codi;
 	}
 

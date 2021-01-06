@@ -34,6 +34,12 @@ public class RutaPostInput {
 	@JsonPropertyDescription("urlPic link")
 	private String urlPic;
 	
+	@JsonProperty("idRefugi")
+	private String idRefugi;
+	
+	@JsonProperty("idCim")
+	private String idCim;
+	
 
 	@JsonProperty("id")
 	public String getId() {
@@ -85,6 +91,22 @@ public class RutaPostInput {
 
 	public void setUrlPic(String urlPic) {
 		this.urlPic = urlPic;
+	}
+
+	public String getIdRefugi() {
+		return idRefugi;
+	}
+
+	public void setIdRefugi(String idRefugi) {
+		this.idRefugi = idRefugi;
+	}
+
+	public String getIdCim() {
+		return idCim;
+	}
+
+	public void setIdCim(String idCim) {
+		this.idCim = idCim;
 	}
 	
 }

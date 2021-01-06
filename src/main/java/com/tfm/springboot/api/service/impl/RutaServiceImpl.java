@@ -12,19 +12,19 @@ import com.tfm.springboot.api.service.RutaService;
 @Service
 public class RutaServiceImpl implements RutaService {
 
-	static final String uri = "http://localhost:5000/rutes/";
+	static final String uri = "http://serviceRuta:80/rutes/";
 
 	RestTemplate template = new RestTemplate();
 
-	public ResponseEntity<RutaPostOutput> addRuta(RutaPostInput rutaInput) {
+	public ResponseEntity<Object> addRuta(RutaPostInput rutaInput) {
 
-		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri, RutaPostOutput.class);
+		ResponseEntity<Object> ruta = template.postForEntity(uri, rutaInput, Object.class);
 
 		return ruta;
 	}
 
 	public ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput rutaInput) {
-		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + "modify" , RutaPostOutput.class);
+		ResponseEntity<RutaPostOutput> ruta = template.postForEntity(uri + "modify" , rutaInput, RutaPostOutput.class);
 
 		return ruta;
 
@@ -43,31 +43,31 @@ public class RutaServiceImpl implements RutaService {
 		return null;
 	}
 
-	public ResponseEntity<RutesSearchOutput> topTen() {
+	public ResponseEntity<Object> topTen() {
 
-		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + "top10", RutesSearchOutput.class);
+		ResponseEntity<Object> ruta = template.getForEntity(uri + "top10", Object.class);
 
 		return ruta;
 	}
 
 	@Override
-	public ResponseEntity<RutesSearchOutput> search(String id) {
+	public ResponseEntity<Object> search(String id) {
 
-		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri + id, RutesSearchOutput.class);
+		ResponseEntity<Object> ruta = template.getForEntity(uri + id, Object.class);
 
 		return ruta;
 	}
 
 	@Override
 	public ResponseEntity<RutaPostOutput> delete(String id) {
-		ResponseEntity<RutaPostOutput> ruta = template.getForEntity(uri + "delete/"+ id , RutaPostOutput.class);
+		ResponseEntity<RutaPostOutput> ruta = template.postForEntity(uri + "delete/"+ id , null, RutaPostOutput.class);
 
 		return ruta;
 	}
 
 	@Override
-	public ResponseEntity<RutesSearchOutput> searchAll() {
-		ResponseEntity<RutesSearchOutput> ruta = template.getForEntity(uri , RutesSearchOutput.class);
+	public ResponseEntity<Object> searchAll() {
+		ResponseEntity<Object> ruta = template.getForEntity(uri , Object.class);
 
 		return ruta;
 	}

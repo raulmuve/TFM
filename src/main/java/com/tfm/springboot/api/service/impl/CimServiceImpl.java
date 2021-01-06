@@ -10,12 +10,13 @@ import com.tfm.springboot.api.rest.model.CimPostInput;
 import com.tfm.springboot.api.rest.model.CimPostOutput;
 import com.tfm.springboot.api.rest.model.RefugiPostInput;
 import com.tfm.springboot.api.rest.model.RefugiPostOutput;
+import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 import com.tfm.springboot.api.service.CimService;
 
 @Service
 public class CimServiceImpl implements CimService{
 	
-	static final String uri = "http://localhost:5004/cims/";
+	static final String uri = "http://serviceCim:80/cims/";
 
 	RestTemplate template = new RestTemplate();
 
@@ -46,15 +47,15 @@ public class CimServiceImpl implements CimService{
 	}
 	
 	@Override
-	public ResponseEntity<CimGetCims> top10() {
-		ResponseEntity<CimGetCims> cims = template.getForEntity(uri + "top10", CimGetCims.class);
+	public ResponseEntity<Object> top10() {
+		ResponseEntity<Object> cims = template.getForEntity(uri + "top10", Object.class);
 		
 		return cims;
 	}
 	
 	@Override
-	public ResponseEntity<CimGetCims> searchAll() {
-		ResponseEntity<CimGetCims> cims = template.getForEntity(uri, CimGetCims.class);
+	public ResponseEntity<Object> searchAll() {
+		ResponseEntity<Object> cims = template.getForEntity(uri, Object.class);
 		
 		return cims;
 		

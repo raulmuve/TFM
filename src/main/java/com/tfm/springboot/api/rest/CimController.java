@@ -15,6 +15,7 @@ import com.tfm.springboot.api.rest.model.Cim;
 import com.tfm.springboot.api.rest.model.CimGetCims;
 import com.tfm.springboot.api.rest.model.CimPostInput;
 import com.tfm.springboot.api.rest.model.CimPostOutput;
+import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 import com.tfm.springboot.api.service.CimService;
 
 @RestController
@@ -45,12 +46,12 @@ public class CimController {
 	}
 	
 	@GetMapping("/top10")
-	ResponseEntity<CimGetCims> topten() {
+	ResponseEntity<Object> topten() {
 		return cimService.top10();
 	}
 	
 	@GetMapping("")
-	ResponseEntity<CimGetCims> searchAll() {
+	ResponseEntity<Object> searchAll() {
 		return cimService.searchAll();
 	}
 	

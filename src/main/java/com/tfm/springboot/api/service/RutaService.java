@@ -10,7 +10,7 @@ import com.tfm.springboot.api.rest.model.RutesSearchOutput;
 @Service
 public interface RutaService {
 
-	ResponseEntity<RutaPostOutput> addRuta(RutaPostInput ruta);
+	ResponseEntity<Object> addRuta(RutaPostInput ruta);
 
 	ResponseEntity<RutaPostOutput> modifyRuta(RutaPostInput ruta);
 
@@ -18,11 +18,11 @@ public interface RutaService {
 
 	ResponseEntity<RutesSearchOutput> searchByRefugi(String idRefugi);
 
-	ResponseEntity<RutesSearchOutput> topTen();
+	ResponseEntity<Object> topTen();
 
-	ResponseEntity<RutesSearchOutput> search(String id);
+	ResponseEntity<Object> search(String id);
 	
-	ResponseEntity<RutesSearchOutput> searchAll();
+	ResponseEntity<Object> searchAll();
 	
 	ResponseEntity<RutaPostOutput> delete(String id);
 }

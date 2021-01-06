@@ -7,14 +7,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CimGetCims {
 	
-	@JsonProperty("cims")
-	private List<RefugiGetRefugisRefugi> cims = null;
+	private List<CimGetCimsCim> cims = null;
 
-	public List<RefugiGetRefugisRefugi> getCims() {
+	public List<CimGetCimsCim> getCims() {
 		return cims;
 	}
 
-	public void setCims(List<RefugiGetRefugisRefugi> cims) {
+	public void setCims(List<CimGetCimsCim> cims) {
 		this.cims = cims;
 	}
 

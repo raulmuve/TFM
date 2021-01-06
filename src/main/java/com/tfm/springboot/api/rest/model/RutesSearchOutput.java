@@ -13,7 +13,5 @@ public class RutesSearchOutput {
 	public RutesSearchOutput setRutes(List<RutesSearchOutputRuta> rutes) {
 		this.rutes = rutes;
 		return this;
-	}
-	
-	
+	}	
 }

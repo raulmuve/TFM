@@ -24,17 +24,17 @@ public class RutaController {
 	private RutaService rutaService;
 
 	@GetMapping("/{id}")
-	ResponseEntity<RutesSearchOutput> search(@PathVariable() String id) {
+	ResponseEntity<Object> search(@PathVariable() String id) {
 		return rutaService.search(id);
 	}
 	
 	@GetMapping("")
-	ResponseEntity<RutesSearchOutput> searchAll() {
+	ResponseEntity<Object> searchAll() {
 		return rutaService.searchAll();
 	}
 
 	@PostMapping("")
-	ResponseEntity<RutaPostOutput> add(@Valid @RequestBody RutaPostInput rutaInput) {
+	ResponseEntity<Object> add(@Valid @RequestBody RutaPostInput rutaInput) {
 		return rutaService.addRuta(rutaInput);
 	}
 
@@ -44,13 +44,13 @@ public class RutaController {
 	}
 
 	@GetMapping("/top10")
-	ResponseEntity<RutesSearchOutput> top10() {
+	ResponseEntity<Object> top10() {
 		return rutaService.topTen();
 
 	}
 	
 	@PostMapping("/delete/{id}")
-	ResponseEntity<RutaPostOutput> delete(@PathVariable() String id) {
+	ResponseEntity<RutaPostOutput> delete(@Valid @RequestBody RutaPostInput rutaInput, @PathVariable() String id) {
 		return rutaService.delete(id);
 	}
 }
